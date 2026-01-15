@@ -154,3 +154,9 @@ import { Button, Modal } from '@/design';
 ## License
 
 MIT
+
+---
+
+**Created by [Rolando Fernandez](https://www.rolandoff.com)** · [rolandoff@gmail.com](mailto:rolandoff@gmail.com)
+
+© 2025 Rolando Fernandez. All rights reserved.
