@@ -1,18 +1,21 @@
 # Design System
 
-This folder contains the **design system** - a collection of foundations, themes, and UI components.
+This folder contains the **design system** - a collection of foundations, themes, utilities, and UI components.
 
 ## Purpose
 
 The design system provides:
 - **Foundations** - Primitive design values (base colors, spacing scales, typography)
 - **Themes** - Semantic tokens that reference foundations (primary, success, error, etc.)
+- **Utils** - SCSS mixins, functions, and CSS reset
 - **Components** - Reusable, accessible UI components (Button, Modal, etc.)
 
 ## Structure
 
 ```
 design/
+├── _index.scss           # Entry point - imports foundations + active theme
+│
 ├── foundations/          # Primitive tokens (raw values)
 │   ├── colors.ts         # Base color palette (blue, gray, green, red, yellow)
 │   ├── spacing.ts        # Spacing scale
@@ -23,9 +26,12 @@ design/
 │   └── index.ts
 │
 ├── themes/               # Semantic tokens (meaningful names)
-│   └── default/
-│       ├── index.ts      # Theme TypeScript exports
-│       └── _default.scss # CSS semantic tokens (--color-primary, etc.)
+│   ├── default/          # Blue primary theme
+│   │   ├── index.ts
+│   │   └── _default.scss
+│   └── brand-a/          # Yellow primary theme
+│       ├── index.ts
+│       └── _brand-a.scss
 │
 ├── utils/                # SCSS utilities
 │   ├── _reset.scss       # CSS reset
@@ -33,36 +39,53 @@ design/
 │   ├── _functions.scss   # Helper functions (px-to-rem, shade, tint)
 │   └── _index.scss       # Forwards all utilities
 │
-├── tokens/               # Entry point for all tokens
-│   └── tokens.scss       # Imports foundations + active theme
-│
 ├── components/           # UI components
 │   ├── Button/
 │   ├── Modal/
 │   └── index.ts
 │
-└── index.ts              # Main exports
+└── index.ts              # TypeScript exports
 ```
 
-## Tokens
+## Usage
 
-Design tokens are defined as CSS custom properties in `tokens/tokens.scss` and loaded globally via `index.scss`.
+### Importing the Design System
 
 ```scss
-// Usage in any SCSS file
+// In your app entry (e.g., index.scss)
+@use './design';
+```
+
+### Switching Themes
+
+Edit `design/_index.scss`:
+```scss
+@use 'foundations';
+@use 'themes/default';    // or 'themes/brand-a'
+```
+
+### Using Semantic Tokens
+
+```scss
 .my-component {
-  color: var(--color-primary-500);
+  color: var(--color-text-primary);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
   padding: var(--spacing-4);
-  font-size: var(--font-size-base);
+}
+
+.button {
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
 }
 ```
 
-TypeScript tokens are available for JS usage:
+### TypeScript Tokens
 
 ```typescript
-import { colors, spacing } from '@/design';
+import { baseColors, spacing } from '@/design';
 
-const primaryColor = colors.primary[500]; // '#3b82f6'
+const blue500 = baseColors.blue[500]; // '#3b82f6'
 ```
 
 ## Component Structure

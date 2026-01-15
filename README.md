@@ -64,7 +64,9 @@ src/
 │   └── ui/              # Presentational shared components
 │
 ├── design/              # Design system
-│   ├── tokens/          # Design tokens (colors, spacing, typography)
+│   ├── foundations/     # Primitive tokens (colors, spacing, typography)
+│   ├── themes/          # Semantic tokens (default, brand-a)
+│   ├── utils/           # SCSS mixins, functions, reset
 │   └── components/      # Reusable UI primitives (Button, Modal)
 │
 ├── features/            # Feature modules (vertical slices)
@@ -96,30 +98,35 @@ import { LoginForm } from '@/features/auth';
 
 ## Design System
 
-### Design Tokens
+### Semantic Tokens
 
-CSS custom properties defined in `src/design/tokens/tokens.scss`:
+Use semantic tokens in your SCSS:
 
 ```scss
-// Colors
-var(--color-primary-500)
-var(--color-gray-200)
+.my-component {
+  color: var(--color-text-primary);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-4);
+}
 
-// Spacing
-var(--spacing-4)
+.button {
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+}
+```
 
-// Typography
-var(--font-size-lg)
-var(--font-weight-semibold)
+### Switching Themes
 
-// Radius & Transitions
-var(--radius-md)
-var(--transition-base)
+Edit `src/design/_index.scss`:
+```scss
+@use 'foundations';
+@use 'themes/default';    // or 'themes/brand-a'
 ```
 
 ### Components
 
-- **Button** - Variants: primary, secondary, outline, ghost. Sizes: small, medium, large
+- **Button** - Variants: primary, secondary, outline, ghost
 - **Modal** - Compound pattern with Header, Body, Footer
 
 ```typescript
@@ -138,7 +145,7 @@ import { Button, Modal } from '@/design';
 
 | Folder | Purpose |
 |--------|---------|
-| `design/` | Reusable design system (tokens + primitives) |
+| `design/` | Design system (foundations, themes, components) |
 | `components/` | Shared app components used across features |
 | `features/` | Self-contained feature modules with own state |
 | `models/` | TypeScript interfaces for API data |
@@ -147,9 +154,9 @@ import { Button, Modal } from '@/design';
 ## Customization
 
 1. Update `package.json` with your project name
-2. Customize design tokens in `src/design/tokens/`
-3. Add features in `src/features/`
-4. Build app components using design system primitives
+2. Customize foundations in `src/design/foundations/`
+3. Create new themes in `src/design/themes/`
+4. Add features in `src/features/`
 
 ## License
 
