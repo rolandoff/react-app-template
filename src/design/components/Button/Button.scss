@@ -1,0 +1,123 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-base);
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+
+  // Sizes
+  &--small {
+    padding: var(--spacing-1) var(--spacing-3);
+    font-size: var(--font-size-sm);
+  }
+
+  &--medium {
+    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--font-size-base);
+  }
+
+  &--large {
+    padding: var(--spacing-3) var(--spacing-6);
+    font-size: var(--font-size-lg);
+  }
+
+  // Variants
+  &--primary {
+    background-color: var(--color-primary-500);
+    color: var(--color-white);
+
+    &:hover:not(:disabled) {
+      background-color: var(--color-primary-600);
+    }
+  }
+
+  &--secondary {
+    background-color: var(--color-gray-500);
+    color: var(--color-white);
+
+    &:hover:not(:disabled) {
+      background-color: var(--color-gray-600);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 1px solid var(--color-gray-300);
+    color: var(--color-gray-700);
+
+    &:hover:not(:disabled) {
+      background-color: var(--color-gray-100);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      border-color: var(--color-gray-600);
+      color: var(--color-gray-200);
+
+      &:hover:not(:disabled) {
+        background-color: var(--color-gray-700);
+      }
+    }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    color: var(--color-gray-700);
+
+    &:hover:not(:disabled) {
+      background-color: var(--color-gray-100);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      color: var(--color-gray-200);
+
+      &:hover:not(:disabled) {
+        background-color: var(--color-gray-700);
+      }
+    }
+  }
+
+  // Loading state
+  &--loading {
+    position: relative;
+  }
+
+  &__spinner {
+    width: 1em;
+    height: 1em;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: var(--radius-full);
+    animation: button-spin 0.6s linear infinite;
+  }
+
+  &__icon {
+    display: inline-flex;
+    
+    &--left {
+      margin-right: var(--spacing-1);
+    }
+
+    &--right {
+      margin-left: var(--spacing-1);
+    }
+  }
+}
+
+@keyframes button-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
