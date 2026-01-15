@@ -1,33 +1,41 @@
 # Design System
 
-This folder contains the **design system** - reusable UI primitives, tokens, and components that are project-agnostic.
+This folder contains the **design system** - a collection of foundations, themes, and UI components.
 
 ## Purpose
 
-Everything here should be:
-- **Reusable** - Can be used across different projects
-- **Generic** - No application-specific business logic
-- **Consistent** - Follows design token standards
+The design system provides:
+- **Foundations** - Primitive design values (base colors, spacing scales, typography)
+- **Themes** - Semantic tokens that reference foundations (primary, success, error, etc.)
+- **Components** - Reusable, accessible UI components (Button, Modal, etc.)
 
 ## Structure
 
 ```
 design/
-├── tokens/                 # Design tokens (single source of truth)
-│   ├── tokens.scss         # CSS custom properties
-│   ├── colors.ts           # Color tokens (JS)
-│   ├── spacing.ts          # Spacing scale (JS)
-│   ├── typography.ts       # Typography tokens (JS)
-│   ├── radius.ts           # Border radius tokens (JS)
-│   ├── transitions.ts      # Transition tokens (JS)
+├── foundations/          # Primitive tokens (raw values)
+│   ├── colors.ts         # Base color palette (blue, gray, green, red, yellow)
+│   ├── spacing.ts        # Spacing scale
+│   ├── typography.ts     # Font families, sizes, weights
+│   ├── radius.ts         # Border radius values
+│   ├── transitions.ts    # Animation durations and easings
+│   ├── _foundations.scss # CSS custom properties (--base-*)
 │   └── index.ts
 │
-├── components/             # Reusable UI components
+├── themes/               # Semantic tokens (meaningful names)
+│   └── default/
+│       ├── index.ts      # Theme TypeScript exports
+│       └── _default.scss # CSS semantic tokens (--color-primary, etc.)
+│
+├── tokens/               # Entry point for all tokens
+│   └── tokens.scss       # Imports foundations + active theme
+│
+├── components/           # UI components
 │   ├── Button/
 │   ├── Modal/
 │   └── index.ts
 │
-└── index.ts                # Main exports
+└── index.ts              # Main exports
 ```
 
 ## Tokens

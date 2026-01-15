@@ -1,5 +1,2 @@
-export * from './colors';
-export * from './spacing';
-export * from './typography';
-export * from './radius';
-export * from './transitions';
+// Re-export from foundations for backwards compatibility
+export * from '../foundations';

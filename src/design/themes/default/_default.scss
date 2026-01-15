@@ -1,0 +1,120 @@
+/**
+ * Default Theme - Semantic tokens
+ * References foundation primitives to create meaningful design tokens
+ */
+:root {
+  // ============================================
+  // SEMANTIC COLORS
+  // ============================================
+
+  // Primary - main brand color for actions, links, focus
+  --color-primary-lighter: var(--base-blue-100);
+  --color-primary-light: var(--base-blue-300);
+  --color-primary: var(--base-blue-500);
+  --color-primary-dark: var(--base-blue-600);
+  --color-primary-darker: var(--base-blue-700);
+  --color-primary-contrast: var(--base-white);
+
+  // Secondary - secondary actions
+  --color-secondary-lighter: var(--base-gray-100);
+  --color-secondary-light: var(--base-gray-300);
+  --color-secondary: var(--base-gray-500);
+  --color-secondary-dark: var(--base-gray-600);
+  --color-secondary-darker: var(--base-gray-700);
+  --color-secondary-contrast: var(--base-white);
+
+  // Success - confirmations, positive states
+  --color-success-lighter: var(--base-green-100);
+  --color-success-light: var(--base-green-300);
+  --color-success: var(--base-green-500);
+  --color-success-dark: var(--base-green-600);
+  --color-success-darker: var(--base-green-700);
+  --color-success-contrast: var(--base-white);
+
+  // Warning - cautions, alerts
+  --color-warning-lighter: var(--base-yellow-100);
+  --color-warning-light: var(--base-yellow-300);
+  --color-warning: var(--base-yellow-500);
+  --color-warning-dark: var(--base-yellow-600);
+  --color-warning-darker: var(--base-yellow-700);
+  --color-warning-contrast: var(--base-black);
+
+  // Error - errors, destructive actions
+  --color-error-lighter: var(--base-red-100);
+  --color-error-light: var(--base-red-300);
+  --color-error: var(--base-red-500);
+  --color-error-dark: var(--base-red-600);
+  --color-error-darker: var(--base-red-700);
+  --color-error-contrast: var(--base-white);
+
+  // ============================================
+  // SURFACE COLORS
+  // ============================================
+
+  // Background
+  --color-background: var(--base-white);
+  --color-background-paper: var(--base-gray-50);
+  --color-background-subtle: var(--base-gray-100);
+
+  // Text
+  --color-text-primary: var(--base-gray-900);
+  --color-text-secondary: var(--base-gray-600);
+  --color-text-disabled: var(--base-gray-400);
+  --color-text-inverse: var(--base-white);
+
+  // Border
+  --color-border-light: var(--base-gray-200);
+  --color-border: var(--base-gray-300);
+  --color-border-dark: var(--base-gray-400);
+
+  // ============================================
+  // LEGACY SUPPORT (for existing components)
+  // ============================================
+  --color-primary-50: var(--base-blue-50);
+  --color-primary-100: var(--base-blue-100);
+  --color-primary-200: var(--base-blue-200);
+  --color-primary-300: var(--base-blue-300);
+  --color-primary-400: var(--base-blue-400);
+  --color-primary-500: var(--base-blue-500);
+  --color-primary-600: var(--base-blue-600);
+  --color-primary-700: var(--base-blue-700);
+  --color-primary-800: var(--base-blue-800);
+  --color-primary-900: var(--base-blue-900);
+
+  --color-gray-50: var(--base-gray-50);
+  --color-gray-100: var(--base-gray-100);
+  --color-gray-200: var(--base-gray-200);
+  --color-gray-300: var(--base-gray-300);
+  --color-gray-400: var(--base-gray-400);
+  --color-gray-500: var(--base-gray-500);
+  --color-gray-600: var(--base-gray-600);
+  --color-gray-700: var(--base-gray-700);
+  --color-gray-800: var(--base-gray-800);
+  --color-gray-900: var(--base-gray-900);
+
+  --color-white: var(--base-white);
+  --color-black: var(--base-black);
+}
+
+// ============================================
+// DARK THEME OVERRIDES
+// ============================================
+@media (prefers-color-scheme: dark) {
+  :root {
+    // Background
+    --color-background: var(--base-gray-900);
+    --color-background-paper: var(--base-gray-800);
+    --color-background-subtle: var(--base-gray-700);
+
+    // Text
+    --color-text-primary: var(--base-gray-100);
+    --color-text-secondary: var(--base-gray-400);
+    --color-text-disabled: var(--base-gray-600);
+    --color-text-inverse: var(--base-gray-900);
+
+    // Border
+    --color-border-light: var(--base-gray-700);
+    --color-border: var(--base-gray-600);
+    --color-border-dark: var(--base-gray-500);
+  }
+}

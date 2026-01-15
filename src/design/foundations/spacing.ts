@@ -1,3 +1,6 @@
+/**
+ * Base spacing scale - primitive spacing values
+ */
 export const spacing = {
   0: '0',
   1: '0.25rem',   // 4px
@@ -14,4 +17,4 @@ export const spacing = {
   24: '6rem',     // 96px
 } as const;
 
-export type SpacingToken = typeof spacing;
+export type Spacing = typeof spacing;

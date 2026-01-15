@@ -1,3 +1,6 @@
+/**
+ * Base typography tokens - primitive font values
+ */
 export const fontFamily = {
   sans: 'system-ui, -apple-system, sans-serif',
   serif: 'Georgia, Cambria, serif',
@@ -17,20 +20,22 @@ export const fontSize = {
 } as const;
 
 export const fontWeight = {
-  normal: '400',
-  medium: '500',
-  semibold: '600',
-  bold: '700',
+  normal: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
 } as const;
 
 export const lineHeight = {
-  none: '1',
-  tight: '1.25',
-  normal: '1.5',
-  relaxed: '1.75',
+  none: 1,
+  tight: 1.25,
+  snug: 1.375,
+  normal: 1.5,
+  relaxed: 1.625,
+  loose: 2,
 } as const;
 
-export type FontFamilyToken = typeof fontFamily;
-export type FontSizeToken = typeof fontSize;
-export type FontWeightToken = typeof fontWeight;
-export type LineHeightToken = typeof lineHeight;
+export type FontFamily = typeof fontFamily;
+export type FontSize = typeof fontSize;
+export type FontWeight = typeof fontWeight;
+export type LineHeight = typeof lineHeight;
