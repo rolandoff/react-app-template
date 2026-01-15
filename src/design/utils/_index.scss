@@ -7,4 +7,4 @@
 
 @forward 'functions';
 @forward 'mixins';
-// Note: reset.scss should be imported directly where needed, not forwarded
+@forward 'reset';
