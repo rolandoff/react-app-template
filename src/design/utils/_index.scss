@@ -1,0 +1,10 @@
+/**
+ * Design System Utilities
+ * 
+ * This file forwards all utility modules.
+ * Use @use 'design/utils' to access mixins and functions.
+ */
+
+@forward 'functions';
+@forward 'mixins';
+// Note: reset.scss should be imported directly where needed, not forwarded

@@ -27,6 +27,12 @@ design/
 │       ├── index.ts      # Theme TypeScript exports
 │       └── _default.scss # CSS semantic tokens (--color-primary, etc.)
 │
+├── utils/                # SCSS utilities
+│   ├── _reset.scss       # CSS reset
+│   ├── _mixins.scss      # Reusable mixins (flex-center, breakpoint, etc.)
+│   ├── _functions.scss   # Helper functions (px-to-rem, shade, tint)
+│   └── _index.scss       # Forwards all utilities
+│
 ├── tokens/               # Entry point for all tokens
 │   └── tokens.scss       # Imports foundations + active theme
 │

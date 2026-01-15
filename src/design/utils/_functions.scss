@@ -1,0 +1,68 @@
+/**
+ * SCSS Functions
+ * Helper functions for calculations and conversions
+ */
+
+// ============================================
+// UNIT CONVERSIONS
+// ============================================
+
+/// Convert px to rem
+/// @param {Number} $px - Pixel value
+/// @param {Number} $base - Base font size (default 16)
+/// @return {Number} - Rem value
+@function px-to-rem($px, $base: 16) {
+  @return #{$px / $base}rem;
+}
+
+/// Convert rem to px
+/// @param {Number} $rem - Rem value
+/// @param {Number} $base - Base font size (default 16)
+/// @return {Number} - Pixel value
+@function rem-to-px($rem, $base: 16) {
+  @return #{$rem * $base}px;
+}
+
+// ============================================
+// COLOR FUNCTIONS
+// ============================================
+
+/// Slightly darken a color
+/// @param {Color} $color - Base color
+/// @param {Number} $amount - Darken percentage
+/// @return {Color} - Darkened color
+@function shade($color, $amount: 10%) {
+  @return mix(black, $color, $amount);
+}
+
+/// Slightly lighten a color
+/// @param {Color} $color - Base color
+/// @param {Number} $amount - Lighten percentage
+/// @return {Color} - Lightened color
+@function tint($color, $amount: 10%) {
+  @return mix(white, $color, $amount);
+}
+
+// ============================================
+// STRING FUNCTIONS
+// ============================================
+
+/// Strip unit from number
+/// @param {Number} $value - Value with unit
+/// @return {Number} - Unitless number
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+// ============================================
+// MATH FUNCTIONS
+// ============================================
+
+/// Clamp a value between min and max
+/// @param {Number} $value - Value to clamp
+/// @param {Number} $min - Minimum value
+/// @param {Number} $max - Maximum value
+/// @return {Number} - Clamped value
+@function clamp-value($value, $min, $max) {
+  @return if($value < $min, $min, if($value > $max, $max, $value));
+}
