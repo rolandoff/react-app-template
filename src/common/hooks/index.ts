@@ -1,3 +1,3 @@
-// Export global hooks here
+// Export hooks here
 // Example: export * from './useDebounce';
 // Example: export * from './useLocalStorage';

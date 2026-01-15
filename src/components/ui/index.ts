@@ -1,2 +1,2 @@
-// Export UI (presentational) shared components here
+// Export UI components here
 // Example: export * from './PageHeader';

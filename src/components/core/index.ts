@@ -1,2 +1,2 @@
-// Export core (logic-heavy) components here
+// Export core components here
 // Example: export * from './ErrorBoundary';
