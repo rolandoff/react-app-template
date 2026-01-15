@@ -1,0 +1,106 @@
+/**
+ * Brand A Theme - Yellow Primary
+ * To use this theme, import it instead of default theme in tokens.scss
+ */
+
+// ============================================
+// SEMANTIC COLORS - BRAND A
+// ============================================
+
+// To activate this theme, replace in tokens.scss:
+// @use '../themes/default/default';
+// with:
+// @use '../themes/brand-a/brand-a';
+
+.theme-brand-a {
+  // Primary - yellow brand color
+  --color-primary-lighter: var(--base-yellow-100);
+  --color-primary-light: var(--base-yellow-300);
+  --color-primary: var(--base-yellow-500);
+  --color-primary-dark: var(--base-yellow-600);
+  --color-primary-darker: var(--base-yellow-700);
+  --color-primary-contrast: var(--base-black);
+
+  // Secondary
+  --color-secondary-lighter: var(--base-gray-100);
+  --color-secondary-light: var(--base-gray-300);
+  --color-secondary: var(--base-gray-500);
+  --color-secondary-dark: var(--base-gray-600);
+  --color-secondary-darker: var(--base-gray-700);
+  --color-secondary-contrast: var(--base-white);
+
+  // Success
+  --color-success-lighter: var(--base-green-100);
+  --color-success-light: var(--base-green-300);
+  --color-success: var(--base-green-500);
+  --color-success-dark: var(--base-green-600);
+  --color-success-darker: var(--base-green-700);
+  --color-success-contrast: var(--base-white);
+
+  // Warning - using red since yellow is primary
+  --color-warning-lighter: var(--base-red-100);
+  --color-warning-light: var(--base-red-300);
+  --color-warning: var(--base-red-400);
+  --color-warning-dark: var(--base-red-500);
+  --color-warning-darker: var(--base-red-600);
+  --color-warning-contrast: var(--base-white);
+
+  // Error
+  --color-error-lighter: var(--base-red-100);
+  --color-error-light: var(--base-red-300);
+  --color-error: var(--base-red-500);
+  --color-error-dark: var(--base-red-600);
+  --color-error-darker: var(--base-red-700);
+  --color-error-contrast: var(--base-white);
+
+  // Background
+  --color-background: var(--base-white);
+  --color-background-paper: var(--base-gray-50);
+  --color-background-subtle: var(--base-yellow-50);
+
+  // Text
+  --color-text-primary: var(--base-gray-900);
+  --color-text-secondary: var(--base-gray-600);
+  --color-text-disabled: var(--base-gray-400);
+  --color-text-inverse: var(--base-white);
+
+  // Border
+  --color-border-light: var(--base-gray-200);
+  --color-border: var(--base-gray-300);
+  --color-border-dark: var(--base-gray-400);
+
+  // Legacy support
+  --color-primary-50: var(--base-yellow-50);
+  --color-primary-100: var(--base-yellow-100);
+  --color-primary-200: var(--base-yellow-200);
+  --color-primary-300: var(--base-yellow-300);
+  --color-primary-400: var(--base-yellow-400);
+  --color-primary-500: var(--base-yellow-500);
+  --color-primary-600: var(--base-yellow-600);
+  --color-primary-700: var(--base-yellow-700);
+  --color-primary-800: var(--base-yellow-800);
+  --color-primary-900: var(--base-yellow-900);
+}
+
+// ============================================
+// DARK MODE OVERRIDES
+// ============================================
+@media (prefers-color-scheme: dark) {
+  .theme-brand-a {
+    // Background
+    --color-background: var(--base-gray-900);
+    --color-background-paper: var(--base-gray-800);
+    --color-background-subtle: var(--base-yellow-900);
+
+    // Text
+    --color-text-primary: var(--base-gray-100);
+    --color-text-secondary: var(--base-gray-400);
+    --color-text-disabled: var(--base-gray-600);
+    --color-text-inverse: var(--base-gray-900);
+
+    // Border
+    --color-border-light: var(--base-gray-700);
+    --color-border: var(--base-gray-600);
+    --color-border-dark: var(--base-gray-500);
+  }
+}
