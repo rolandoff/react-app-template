@@ -1,0 +1,12 @@
+/**
+ * Design System Entry Point
+ * 
+ * Import this file once at your app root to load:
+ * - Foundations (primitive tokens)
+ * - Active theme (semantic tokens)
+ * 
+ * To change themes, update the theme import below.
+ */
+
+@use 'foundations';
+@use 'themes/default';  // Change to 'themes/brand-a' for Brand A theme
