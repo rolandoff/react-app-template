@@ -2,3 +2,10 @@
  * CSS Reset
  * Add CSS reset rules here if needed
  */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border: 0;
+  font: inherit;
+}
