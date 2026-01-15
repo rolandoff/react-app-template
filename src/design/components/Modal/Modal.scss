@@ -16,7 +16,7 @@
   flex-direction: column;
   width: 100%;
   max-height: 85vh;
-  background-color: var(--color-white);
+  background-color: var(--color-background);
   border-radius: var(--radius-lg);
   box-shadow: 
     0 0 0 1px rgba(0, 0, 0, 0.05),
@@ -26,6 +26,7 @@
   outline: none;
   animation: modal-slide-in var(--transition-base);
   overflow: hidden;
+  color: var(--color-text-primary);
 
   &--small {
     max-width: 400px;
@@ -37,14 +38,6 @@
 
   &--large {
     max-width: 800px;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--color-gray-800);
-    color: var(--color-gray-100);
-    box-shadow: 
-      0 0 0 1px rgba(255, 255, 255, 0.1),
-      0 25px 50px -12px rgba(0, 0, 0, 0.5);
   }
 }
 

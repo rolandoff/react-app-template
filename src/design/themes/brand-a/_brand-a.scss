@@ -7,12 +7,7 @@
 // SEMANTIC COLORS - BRAND A
 // ============================================
 
-// To activate this theme, replace in tokens.scss:
-// @use '../themes/default/default';
-// with:
-// @use '../themes/brand-a/brand-a';
-
-.theme-brand-a {
+:root {
   // Primary - yellow brand color
   --color-primary-lighter: var(--base-yellow-100);
   --color-primary-light: var(--base-yellow-300);
@@ -68,25 +63,13 @@
   --color-border-light: var(--base-gray-200);
   --color-border: var(--base-gray-300);
   --color-border-dark: var(--base-gray-400);
-
-  // Legacy support
-  --color-primary-50: var(--base-yellow-50);
-  --color-primary-100: var(--base-yellow-100);
-  --color-primary-200: var(--base-yellow-200);
-  --color-primary-300: var(--base-yellow-300);
-  --color-primary-400: var(--base-yellow-400);
-  --color-primary-500: var(--base-yellow-500);
-  --color-primary-600: var(--base-yellow-600);
-  --color-primary-700: var(--base-yellow-700);
-  --color-primary-800: var(--base-yellow-800);
-  --color-primary-900: var(--base-yellow-900);
 }
 
 // ============================================
 // DARK MODE OVERRIDES
 // ============================================
 @media (prefers-color-scheme: dark) {
-  .theme-brand-a {
+  :root {
     // Background
     --color-background: var(--base-gray-900);
     --color-background-paper: var(--base-gray-800);
